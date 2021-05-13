@@ -1,0 +1,769 @@
+/*
+░█▀▀░█▀█░█░░░█▀█░█▀▄░█▀▀
+░█░░░█░█░█░░░█░█░█▀▄░▀▀█
+░▀▀▀░▀▀▀░▀▀▀░▀▀▀░▀░▀░▀▀▀
+
+Load preferred colorscheme
+*/
+
+/* Blurred Color Scheme */
+@import url('colors/blurred.css');
+
+/* Solid Color Scheme */
+/*
+@import url('colors/solid.css');
+*/
+
+/*
+░█░█░▀█▀░░░█▀▀░█░░░█▀▀░█▄█░█▀▀░█▀█░▀█▀░█▀▀
+░█░█░░█░░░░█▀▀░█░░░█▀▀░█░█░█▀▀░█░█░░█░░▀▀█
+░▀▀▀░▀▀▀░░░▀▀▀░▀▀▀░▀▀▀░▀░▀░▀▀▀░▀░▀░░▀░░▀▀▀
+
+Load Customized Firefox's UI Elements
+*/
+/*@import url('parts/sliding-bookmarks-bar.css');*/
+@import url('parts/main-window.css');
+@import url('parts/toolbar.css');
+@import url('parts/tabbar.css');
+@import url('parts/urlbar.css');
+@import url('parts/sidebar.css');
+/*@import url('parts/arrow-panel.css');*/
+@import url('parts/findbar.css');
+/*@import url('parts/context-menu.css');*/
+@import url('parts/customization-window.css');
+@import url('parts/window-controls.css');
+/*@import url('edge/extras/hidetabclosebutton.css'); /* Hide tab close button when mouse not hovering over it */
+@import url('edge/extras/vibrancy.css');  /* (MACOS ONLY!) Enable window vibrancy behind tabs */
+@import url('edge/tabbar/EdgeStyleTabShadow.css');
+/* @import url('extras/addIconsToMenubarPopups.css'); /* (UNFINISHED) (TESTED ON MACOS ONLY!) Add icons to menubar popups */
+@import url('parts/compact-bookmarks.css');
+@import url('extras/customColorTheme.css'); /* Custom Color Theme Template, Modify colors more easily */
+
+/* Selected Tab Background Color */
+.tab-background[selected="true"] {
+  background: var(--autocomplete-popup-highlight-background) !important;
+  opacity: 0.9 !important;
+}
+/* Turn on Vibrancy aka macOS Transparency and Blur in the URL Bar, Nav Bar, and Side
+Panel, Findbar, and Bookmarks Bar */
+#main-window,
+#nav-bar,
+#sidebar-header,
+#history-panel,
+#sidebar-search-container,
+#bookmarksPanel,
+#PersonalToolbar,
+findbar {
+  -moz-appearance: auto !important;
+}
+
+/* Various Opacities */
+#appMenu-popup,
+#customizationui-widget-panel,
+#pageActionPanel,
+#editBookmarkPanel,
+#protections-popup,
+#pageActionActivatedActionPanel,
+#widget-overflow,
+#urlbar-background,
+#identity-popup,
+.panel-arrowcontent,
+menupopup[hasbeenopened="true"] {
+  opacity: 0.95 !important;
+}
+
+/* Possible Bug Fix Keeps sidebar from being weirdly affected by vibrancy settings in find bar*/
+findbar {
+  opacity: 0.9 !important;
+}
+/* Remove Themeing */
+menupopup,
+menuitem,
+menu {
+  -moz-appearance: none !important;
+}
+
+/* Softens the Menu Separator in Right Click Menus */
+menupopup menuseparator {
+  -moz-appearance: meter !important;
+}
+/* Keep Rounded Edges on Menus */
+.panel-arrowcontent,
+#alltabs-popup .arrowscrollbox-scrollbox,
+menupopup:not(#BMB_bookmarksPopup),
+.textbox-contextmenu {
+  border-radius: 5px !important;
+}
+
+/*  Sets Background Color, Text Color, and Opacity  */
+#mainPopupSet menupopup {
+  color: var( --lwt-toolbar-field-color) !important; /* Text Color */
+  background-color: #4d4dfe40 !important; /*This is the right click menu color*/
+  opacity: 0.9 !important;
+}
+
+/* Color of hovered menu item */
+menu[_moz-menuactive="true"], menuitem[_moz-menuactive="true"] {
+  background-color: var(--lwt-toolbarbutton-icon-fill-attention) !important;
+}
+
+/* Side Panel Header Drop Down*//*
+image.panel-arrow {
+  color: var(--autocomplete-popup-highlight-background) !important;} /*This is the right click menu color of the little arrow */
+
+
+/* Side Panel Drop Down Menu Hover Color */
+.subviewbutton:hover {
+  background-color: var(--lwt-toolbarbutton-icon-fill-attention) !important
+}
+
+box.panel-arrowcontent{ 
+  color: var(--lwt-tab-text) !important;  /*Text Color */ /* or var(--toolbar-color)*/
+  background: #4d4dfe40!important; /*This is the right click menu color*/
+  box-shadow:  var(--autocomplete-popup-highlight-background) !important; 
+  opacity: 0.9;
+}
+
+/* context menus in the ui like the url bar */
+arrowscrollbox.menupopup-arrowscrollbox {
+  color:var(--lwt-tab-text, var(--toolbar-color)) !important; /* Text Color */
+  background: var(--autocomplete-popup-highlight-background) !important; /*This is the right click menu color*/
+  box-shadow:  var(--autocomplete-popup-highlight-background) !important; 
+  opacity: 0.9 !important;
+  border-radius: 5px !important;
+}
+/*
+image.panel-arrow {
+	fill: var(--autocomplete-popup-highlight-background) !important;
+	stroke:  var(--autocomplete-popup-highlight-background) !important;
+}*/
+.findbar-closebutton {
+  -moz-appearance: auto !important;
+}
+/* Hides all the tabs if there is only one tab 
+#tabbrowser-tabs tab:only-of-type,
+#tabbrowser-tabs tab:only-of-type + #tabs-newtab-button {
+  display: none !important;
+}
+/* Not Sure If Needed URL Bar Input Context Menu 
+menupopup[hasbeenopened="true"] {
+  background-color: var(--color8) !important;
+  color: white !important;
+}
+
+/* Find Bar Input Field color and text color */
+.findbar-textbox.findbar-find-fast {
+  background-color: white !important;
+  color: black !important;
+}
+
+/* Color of Buttons When Hovering in Find Bar 
+.findbar-button.tabbable:hover {
+  background-color: var(--autocomplete-popup-highlight-background) !important;
+}
+
+/* Color of Selected Button 
+.findbar-button.tabbable[checked="true"] {
+  background-color: var(--autocomplete-popup-highlight-background) !important;
+}
+
+/*Color of Text and Highlight Color in Find Bar Input Field */
+::-moz-selection {
+	color: #b3b3b3 !important;  /*Colour of text*/
+	background: #985EFFCC !important;  /*Highlighting colour*/
+	}
+
+box#customization-container {
+  -moz-appearance: auto !important;
+} 
+
+/*Button Color*/
+.customizationmode-button {
+  -moz-appearance: auto !important;
+  background: #985EFFCC !important;
+}
+
+/* Button Color on Hover */
+.customizationmode-button:hover {
+  -moz-appearance: auto !important;
+  background: var(--autocomplete-popup-highlight-background) !important;
+}
+
+/* Button Text */
+.customizationmode-button label {
+  color: var(--lwt-toolbar-field-color) !important; 
+}
+
+/* Text Color on Hover */
+.customizationmode-button:hover label {
+  color: var(--autocomplete-popup-highlight-color) !important;
+}
+
+/* Remove border From Buttons */
+.customizationmode-button{
+  border: none !important;
+}
+/* URL Bar Drop Down Coloring 
+vbox.panel-subview-body {
+  background-color: var(--autocomplete-popup-highlight-background) !important;
+}
+box.panel-header {
+  background-color: var(--autocomplete-popup-highlight-background) !important;
+}
+
+#overflowMenu-customize-button {
+  background-color: var(--autocomplete-popup-highlight-background) !important;
+}
+/* Hide some buttons for hover 
+*/
+	#nav-bar:not([customizing="true"]) > #nav-bar-customization-target > #urlbar-container:not(:hover) > #urlbar:not([focused]) > #urlbar-input-container > #page-action-buttons {
+		opacity: 0;
+	}	
+	#page-action-buttons {
+		transition: opacity 0.15s ease;
+	}
+	#nav-bar:not([customizing="true"]) > #nav-bar-customization-target > #urlbar-container:not(:hover) > #urlbar:not([focused]) > #urlbar-input-container > #identity-box {
+		opacity: 0;
+		/*visibility: collapse;*/
+	}
+	#identity-box {
+		/*transition: visibility 0.30s ease-in-out, opacity 0.30s ease-in-out;*/
+		transition: opacity 0.15s ease;
+	}
+	#nav-bar:not([customizing="true"]) > #nav-bar-customization-target > #urlbar-container:not(:hover) > #urlbar:not([focused]) > #urlbar-input-container > #tracking-protection-icon-container {
+		opacity: 0;
+	}
+	#tracking-protection-icon-container {
+		transition: opacity 0.15s ease;
+	}
+
+	  
+.tabbrowser-tab:not([visuallyselected="true"]):not([multiselected]):not(:hover) .tab-icon-image {
+		opacity: 0.6 !important;
+    /*filter: grayscale() !important;*/
+}	
+/* Design of the plus/newtab button */
+toolbar #tabs-newtab-button:not([disabled="true"]):not([checked]):not([open]):not(:active):hover > .toolbarbutton-icon {
+    border: 0 !important; 
+	border-radius: 20px 20px 20px 20px !important;
+	background-image: none !important;
+	background-color: #0000002d !important;
+}
+
+toolbar #tabs-newtab-button:not([disabled="true"]):-moz-any([open], [checked], :hover:active) > .toolbarbutton-icon {
+    border: 0 !important;
+    border-bottom: 0px solid #ffffff30 !important;
+	border-radius: 20px 20px 20px 20px !important;
+	background-image: none !important;
+	background-color: #0000004d !important;
+  box-shadow:inset 0 0 10px #000000b6;
+}
+
+#tabbrowser-tabpanels {
+  background: var(--toolbar-bgcolor) !important;
+}
+
+.tab-secondary-label:is([soundplaying], [muted], [activemedia-blocked], [pictureinpicture]){ display: -moz-box !important; }
+
+#main-window { 
+  background-color: transparent !important 
+}
+
+/* Show tab close button when cursor is over the tab icon  */
+/*
+.tab-close-button{
+  -moz-box-ordinal-group: 0;
+  display: -moz-box !important;
+  position: relative;
+  margin-right: -18px !important;
+  z-index: -1;
+  visibility: hidden;
+}
+
+.tabbrowser-tab[pinned] .tab-close-button{ display: none !important; }
+.tab-close-button:hover{ background-color: var(--lwt-accent-color); }
+
+.tabbrowser-tab[selected] .tab-close-button:hover{ background-color: var(--lwt-selected-tab-background-color, var(--toolbar-bgcolor)); }
+
+
+.tab-icon-image:hover ~ .tab-close-button,
+.tab-close-button:hover,
+.tab-icon-image:not([src]) ~ .tab-label-container:hover ~ .tab-close-button{ visibility: visible; z-index: 1 }
+.tab-icon-image:not([src]) ~ .tab-label-container:hover ~ .tab-close-button,
+.tab-icon-image:not([src]) ~  .tab-close-button:hover {margin-right: 0px !important; }
+
+	
+
+/* Show Tab close button on hover */
+/*
+.tabbrowser-tab:not([pinned]) .tab-close-button {
+  display: -moz-box !important;
+  opacity: 0 !important;
+  visibility: collapse !important;
+  transition: opacity 0.25s, visibility 0.25s ease-in !important;
+}
+.tabbrowser-tab:not([pinned]):hover .tab-close-button {
+  opacity: 1 !important;
+  visibility: visible !important; 
+}
+*/
+#tabbrowser-tabpanels,
+#webextpanels-window,
+#webext-panels-stack,
+#webext-panels-browser {
+    background: transparent !important;
+}
+
+#navigator-toolbox {
+  background-color: transparent !important;
+  }
+  /* new code from reddit */
+
+/* move tab close button to LEFT side only show on hover */
+/*
+.tab-close-button{ -moz-box-ordinal-group: 0 }
+.tabbrowser-tab .tab-close-button{ visibility: hidden; }
+.tabbrowser-tab:not([pinned]):hover .tab-close-button{ visibility: visible !important }
+.tab-content:not([pinned])::before,
+.tab-content:not([pinned])::after{ display: -moz-box; content: ""; -moz-box-flex: 1 }
+*/
+
+.titlebar-spacer[type="pre-tabs"] {
+  border-inline-end: none !important;
+  width: 0px !important;
+}
+
+.titlebar-spacer[type="post-tabs"] {
+  width: 0px !important;
+}
+.titlebar-placeholder {
+  border: none !important;
+}
+
+/* ------------------------------------ */
+/* Firefox Translucent Tabbar for macOS */
+/* ------------------------------------ */
+
+:root:not(:-moz-window-inactive) {
+  background: transparent !important;
+}
+
+:root #TabsToolbar,
+:root #titlebar,
+:root #tabbrowser-tabs {
+   -moz-appearance: -moz-mac-vibrant-titlebar-dark !important;
+   background-color: transparent !important;
+}
+
+:root:not([lwthemetextcolor="bright"]) #TabsToolbar,
+:root:not([lwthemetextcolor="bright"]) #titlebar,
+:root:not([lwthemetextcolor="bright"]) #tabbrowser-tabs  {
+  color: #000 !important;
+}
+
+:root[lwthemetextcolor="dark"] #TabsToolbar,
+:root[lwthemetextcolor="dark"] #titlebar,
+:root[lwthemetextcolor="dark"] #tabbrowser-tabs {
+   -moz-appearance: -moz-mac-vibrant-titlebar-light !important;
+}
+
+:root[lwthemetextcolor="bright"] #TabsToolbar,
+:root[lwthemetextcolor="bright"] #titlebar,
+:root[lwthemetextcolor="bright"] #tabbrowser-tabs {
+   -moz-appearance: -moz-mac-vibrant-titlebar-dark !important;
+}
+
+:root:-moz-window-inactive #TabsToolbar,
+:root:-moz-window-inactive #titlebar,
+:root:-moz-window-inactive #tabbrowser-tabs {
+   -moz-appearance: -moz-mac-vibrant-titlebar-dark !important;
+}
+
+:root[lwthemetextcolor="bright"]:-moz-window-inactive {
+  --lwt-accent-color-inactive: rgb(40,40,40) !important;
+}
+
+:root[lwthemetextcolor="dark"] .tabbrowser-tab:not([selected="true"]):hover {
+   background-color: transparent !important;
+}
+
+:root:not([lwthemetextcolor="bright"]) .tabbrowser-tab:not([selected="true"]) {
+  color: #000 !important;
+}
+/*
+:root[lwthemetextcolor="bright"] {
+  --lwt-background-tab-separator-color: rgba(255,255,255,0.5);
+  --lwt-selected-tab-background-color: rgb(55,55,55);
+  --toolbar-bgcolor: rgb(55,55,55) !important;
+  --tabs-border-color: rgba(0,0,0,0.8);
+}
+*/
+:root[lwthemetextcolor="bright"] .tabbrowser-tab:not([selected="true"]):hover {
+   background-color: transparent !important;}
+
+
+:root[macOSNativeFullscreen] #navigator-toolbox:-moz-lwtheme-darktext {
+  background-color: transparent !important;
+}
+
+#TabsToolbar:-moz-lwtheme-darktext {
+  appearance: auto;
+  -moz-default-appearance: -moz-mac-vibrant-titlebar-light !important;
+  -moz-font-smoothing-background-color: -moz-mac-vibrant-titlebar-light !important;
+}
+/*
+.tabbrowser-tab[multiselected]:-moz-lwtheme-darktext,
+.tabbrowser-tab[visuallyselected=true]:-moz-lwtheme-darktext {
+  -moz-font-smoothing-background-color: var(--toolbar-bgcolor);
+}
+*/
+/* 
+******new********
+/* ------------------------------------ */
+/* Firefox Translucent Tabbar for macOS */
+/* ------------------------------------ */
+
+:root:not(:-moz-window-inactive) #navigator-toolbox {
+  background-color: transparent !important 
+}
+
+:root #TabsToolbar,
+:root #titlebar,
+:root #tabbrowser-tabs {
+   -moz-appearance: -moz-mac-vibrant-titlebar-dark !important;
+   background-color: transparent !important;
+}
+
+:root:not([lwthemetextcolor="bright"]) #TabsToolbar,
+:root:not([lwthemetextcolor="bright"]) #titlebar,
+:root:not([lwthemetextcolor="bright"]) #tabbrowser-tabs  {
+  color: #000 !important;
+}
+
+:root[lwthemetextcolor="dark"] #TabsToolbar,
+:root[lwthemetextcolor="dark"] #titlebar,
+:root[lwthemetextcolor="dark"] #tabbrowser-tabs {
+   -moz-appearance: -moz-mac-vibrant-titlebar-light !important;
+}
+
+:root[lwthemetextcolor="bright"] #TabsToolbar,
+:root[lwthemetextcolor="bright"] #titlebar,
+:root[lwthemetextcolor="bright"] #tabbrowser-tabs {
+   -moz-appearance: -moz-mac-vibrant-titlebar-dark !important;
+}
+
+:root:-moz-window-inactive #TabsToolbar,
+:root:-moz-window-inactive #titlebar,
+:root:-moz-window-inactive #tabbrowser-tabs {
+   -moz-appearance: -moz-mac-vibrant-titlebar-dark !important;
+}
+
+:root[lwthemetextcolor="bright"]:-moz-window-inactive {
+  --lwt-accent-color-inactive: rgb(40,40,40) !important;
+}
+
+:root[lwthemetextcolor="dark"] .tabbrowser-tab:not([selected="true"]):hover {
+   background-color: transparent !important;
+}
+
+:root:not([lwthemetextcolor="bright"]) .tabbrowser-tab:not([selected="true"]) {
+  color: #000 !important;
+}
+/*
+:root[lwthemetextcolor="bright"] {
+  --lwt-background-tab-separator-color: rgba(255,255,255,0.5);
+  --lwt-selected-tab-background-color: rgb(55,55,55);
+  --toolbar-bgcolor: rgb(55,55,55) !important;
+  --tabs-border-color: rgba(0,0,0,0.8);
+}
+
+
+/* Gradient line */
+.tab-background {	position: relative !important;}
+.tab-background::after { width: 100% !important;margin-block: 0px !important; background: var(--panel-separator-zap-gradient);  position: absolute;
+	content: '';	height: 2px;	left: 0;		right: 6;	top: 0;  margin-top: -1px !important;  margin-left: px !important;	transform: scale(0, 1);
+	transform-origin: center center;  opacity: 1 !important;}
+.tab-background[selected="true"]::after {	transform: scale(1, 1);}
+
+/* Active tab brightness */
+.tab-content[selected="true"] {background-color:color-mix(in srgb, #4d4dfe 20%, transparent) !important; text-shadow: none !important;
+  border-radius:4px 4px 4px 4px !important; margin-top: 3px !important; margin-bottom: 3px !important;}
+
+
+/* Mouse Hover Background by passing by non-selected tabs */
+.tabbrowser-tab:hover > .tab-stack > .tab-background:not([selected="true"], [multiselected]) {background-color: #4d4dfe50  !important;}
+/* "Customize search bar" */
+.browserContainer > findbar:-moz-lwtheme {color: #d3d3d3 !important;}     
+.findbar-find-status[status="notfound"] {color: #00dbfd !important;}
+#customization-container {color: #d3d3d3 !important;}                     /* "Color of text and" customize toolbar "icons */
+
+/*"popup_highlight"*/
+.urlbarView-row:not([type="tip"], [type="dynamic"])[selected] > .urlbarView-row-inner, .urlbarView-row-inner[selected] {
+    background-color: #3e3b9d !important;color: #ffffff !important}
+
+/*"toolbar_bottom_separator"*/
+#navigator-toolbox { border-bottom: 1px solid #131230 !important;}
+
+/* "Menu with fewer spaces" */
+menupopup > menuitem, menupopup > menu{ padding-block: 0.5m !important;}
+
+/* "Close button" */
+.tab-close-button{margin-inline-start: -6px !important;width: 16px !important;height: 16px !important;padding: 3px !important; margin-inline-end:-6px !important; }*/
+.tabbrowser-tab > .tab-stack > .tab-content >.tab-close-button{border-radius: 4px !important;}
+
+/* "Minor measures for scroll of tabs" */
+#tabbrowser-tabs{ --uc-tabs-scrollbutton-border: 2px }
+#scrollbutton-up, #scrollbutton-down{ border-block-width: var(--uc-tabs-scrollbutton-border,0px) !important; }
+/* "Green color of the secure web padlock icon" */
+#identity-icon {color: #2cf62c !important; height: 14px !important; width :14px !important;}
+
+/* Smaller reading view icon "*/
+.urlbar-icon {padding: 4px !important}
+/* rework on the container line */
+.tab-context-line{max-width: 100% !important; max-height: 1px !important; margin-left: 8px !important;margin-bottom: -1px !important;}
+.tab-context-line{-moz-box-ordinal-group: 2 !important; opacity: 1 !important;transition: none !important;}
+
+/* Media label "Playing" modified */
+.tab-secondary-label:is([soundplaying], [pictureinpicture]) {display: -moz-box !important; margin-top: -2px !important; opacity: 1 !important; text-shadow: none !important;
+  font-weight: bold !important; background: linear-gradient(0.25turn,rgb(144, 89, 255,1),rgb(255, 74, 162),#ffa200); -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;}
+.tab-secondary-label:is([muted], [activemedia-blocked]) {display: none !important; animation-duration: 0s !important;}
+
+/* Sound icon always visible on eyelashes with sound, while still showing the favicon */
+.tab-icon-image:not([pinned]){ opacity: 1 !important}
+.tab-icon-overlay:not([pinned],[crashed])[soundplaying]{
+  opacity: 1 !important; border-radius: 9px !important; top: -4px; inset-inline-end: -13px;z-index: 1;margin-right: 13px !important; color: #e6fcff !important;
+  background-color: #1d1d38ff !important; fill-opacity: 1 !important; padding: 0px !important; height: 14px !important; width: 14px !important;}
+.tab-icon-overlay:not([pinned],[crashed])[muted], .tab-icon-overlay:not([crashed],[pinned])[activemedia-blocked] 
+  {opacity: 1 !important; border-radius: 9px !important; top: -4px; inset-inline-end: -13px;z-index: 1;margin-right: 13px !important;  color: #ffffff !important;
+  background-color: #1d1d3850 !important; fill-opacity: 0.8 !important;padding: 0px !important; height: 14px !important; width: 14px !important;}
+.tab-icon-overlay:not([crashed])[soundplaying]:hover, .tab-icon-overlay:not([crashed])[muted]:hover, .tab-icon-overlay:not([crashed])[activemedia-blocked]:hover { 
+ stroke: white !important; color: black !important; fill-opacity: 1 !important; padding: 0px !important; height: 14px !important; width: 14px !important}
+.tab-icon-overlay:is([pinned]){padding: 0px !important; height: 14px !important; width: 14px !important; stroke: #1d1d3870 !important; color: white !important;
+ margin-left: 3px !important;}
+
+/* Rule to display better selecting several tabs */
+.tabbrowser-tab[multiselected]:-moz-lwtheme{
+  border-radius: 4px 4px !important;
+  background-color:color-mix(in srgb, #005866 30%, transparent) !important;
+  color: #33e4ff !important;
+  --tab-line-color:#295170 !important;}
+
+/* Color of drop-down menus arrows */
+#identity-popup, #permission-popup, #protections-popup, .panel-header, .subviewbutton-back, .PanelUI-subView, .subviewbutton-nav::after{ fill: #d9ecff !important}
+/*colores del Menú contextual*/
+menuseparator {border-top: 1px solid #3d3762 !important; padding: 0 !important; margin: 2px 0.5em !important;}
+.menupopup-arrowscrollbox {background-color: #1d1d38 !important; border: 1px solid #3d3762 !important; border-radius: 4px !important; padding-block: 0px !important;
+  border-color: #2d2762 !important;}
+/* Removes the padding between pinned and unpinned tabs */
+#tabbrowser-tabs[haspinnedtabs]:not([positionpinnedtabs]) > #tabbrowser-arrowscrollbox > .tabbrowser-tab[first-visible-unpinned-tab] {
+      margin-inline-start: 0 !important;
+}
+.tabbrowser-tab:hover {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+/* Show Tab close button on hover *//*
+.tabbrowser-tab:not([pinned]) .tab-close-button {
+  display: -moz-box !important;
+  opacity: 0;
+  visibility: collapse !important;
+ transition: opacity 0.25s, visibility 0.25s ease-in !important;
+}
+.tabbrowser-tab:not([pinned]):hover .tab-close-button {
+  opacity: 1;
+  visibility: visible !important; 
+}*/
+/*Mover el label de las pestañas al centro vertical de la pestaña*/
+.tab-label {margin-top: -3px !important; text-shadow: none !important;}
+/*Fondo de hover del mouse al pasar por pestañas no seleccionadas*/
+.tabbrowser-tab:hover > .tab-stack > .tab-background:not([selected="true"], [multiselected]) {background-color: #4d4dfe50  !important;}
+/*Vizualización correcta del porcentaje de zoom mostrado en la urlbar*/
+#urlbar-zoom-button {padding: 0px 2px !important;}
+
+/*Linea de arcoiris en los menús principales*/
+.PanelUI-subView > toolbarseparator {border-image: var(--panel-separator-zap-gradient) 1 !important;}
+/* "Close button" */
+.tab-close-button{margin-inline-start: -2px !important;width: 16px !important;height: 16px !important;padding: 3px !important; margin-inline-end:-6px !important; }
+.tabbrowser-tab > .tab-stack > .tab-content >.tab-close-button{border-radius: 4px !important;}
+
+/* Tweaks for Ctrl+Tab */
+
+#ctrlTab-previews {
+	border-radius: 5px !important;
+}
+
+#ctrlTab-panel {
+	-moz-appearance: none !important;
+	color: #ffffff !important;
+	border-style: none !important;
+	padding: 20px 10px 10px !important;
+	/*font-family: Fira Sans !important;*/
+	font-weight: bold !important;
+	background: #191c261c !important;
+	text-align: center !important;
+	text-shadow: none !important;
+}
+
+.ctrlTab-preview:not(#ctrlTab-showAll)>*>.ctrlTab-preview-inner {
+	margin: -10px -10px 0 !important;
+}
+
+.ctrlTab-preview-inner {
+	padding: 8px !important;
+	border: 2px solid transparent !important;
+	border-radius: 5px !important;
+}
+
+tabPreview-canvas element {
+	max-width: 272px !important;
+	min-width: 272px !important;
+	max-height: 153px !important;
+	min-height: 153px !important;
+}
+
+.ctrlTab-favicon-container {
+	-moz-box-align: start !important;
+	-moz-box-pack: start !important;
+}
+
+.ctrlTab-favicon[src] {
+	background-color: transparent !important;
+	width: 25px !important;
+	height: 25px !important;
+	padding: 2px !important;
+}
+  /* Show Tab Close buttons only when hovered (slide in using max-width) */
+.tabbrowser-tab:not([pinned]) .tab-close-button {
+	max-width: 0px !important;
+	opacity: 0 !important;
+	/*transition: all 250ms ease-in-out 250ms !important;*/
+	/* no delay on exit*/
+}
+
+.tabbrowser-tab:not([pinned]):hover .tab-close-button {
+	display: -moz-box !important;
+	max-width: 20px !important;
+	opacity: 1 !important;
+	/*transition: all 250ms ease-in-out 250ms !important;*/
+	/* quarter second delay on entry*/
+}
+
+.tab-text,
+.tab-label {
+	-moz-box-flex: 1 !important;
+	text-align: center !important;
+}
+
+
+.tabbrowser-tab{
+  border-inline-end: 1px solid transparent !important;
+  border-image: 0 1 linear-gradient(transparent 20%,var(--toolbarseparator-color) 20%,var(--toolbarseparator-color) 80%,transparent 80%);
+}
+.tabbrowser-tab:hover,
+.tabbrowser-tab[beforehovered],
+.tabbrowser-tab[selected],
+.tabbrowser-tab[last-visible-tab],
+.tabbrowser-tab[beforeselected-visible]{ border-image: none !important; }
+
+
+
+/* Make backgrounds transparent */
+.close-icon,
+.urlbar-icon,
+.urlbar-icon-wrapper,
+toolbar .toolbarbutton-1,
+#tabbrowser-tabs toolbarbutton,
+toolbar toolbarbutton > .toolbarbutton-icon,
+toolbar toolbarbutton > .toolbarbutton-badge-stack,
+.titlebar-button,
+#identity-box,
+#identity-icon-box,
+#tracking-protection-icon-container,
+.findbar-textbox~toolbarbutton,
+toolbarbutton.scrollbutton-up,
+toolbarbutton.scrollbutton-down,
+toolbarbutton#scrollbutton-up,
+toolbarbutton#scrollbutton-down{
+  background-color: transparent !important;
+  border-color: transparent !important;
+}
+
+/* Glow effects on hover */
+.close-icon:hover,
+.urlbar-history-dropmarker:hover,
+#page-action-buttons > .urlbar-icon:hover,
+.urlbar-icon-wrapper:hover > .urlbar-icon,
+toolbar .toolbarbutton-1:not([disabled]):hover .toolbarbutton-icon,
+#TabsToolbar toolbarbutton:not([disabled]):hover .toolbarbutton-icon,
+toolbar #downloads-button:hover #downloads-indicator-anchor,
+#identity-box:not(.no-hover):hover,
+#tracking-protection-icon:hover,
+.findbar-textbox~toolbarbutton:not([disabled]):hover,
+toolbarbutton.scrollbutton-up:not([disabled]):hover,
+toolbarbutton.scrollbutton-down:not([disabled]):hover,
+toolbarbutton#scrollbutton-up:not([disabled]):hover,
+toolbarbutton#scrollbutton-down:not([disabled]):hover{ 
+  filter: brightness(2) drop-shadow(0 0 2px cyan) drop-shadow(0 0 1px cyan)
+}
+
+/* Active states and close window button hover state *//*
+#titlebar .titlebar-buttonbox > .titlebar-close:hover > .toolbarbutton-icon,
+.close-icon:active,
+.urlbar-history-dropmarker:active,
+#page-action-buttons > .urlbar-icon:active,
+#page-action-buttons > .urlbar-icon[open],
+.urlbar-icon-wrapper:active > .urlbar-icon,
+.urlbar-icon-wrapper[open] > .urlbar-icon,
+toolbar toolbarbutton:not([disabled]):active .toolbarbutton-icon,
+toolbar toolbarbutton:not([disabled])[open] .toolbarbutton-icon,
+#TabsToolbar toolbarbutton:not([disabled]):active .toolbarbutton-icon,
+toolbar #downloads-button:active #downloads-indicator-anchor,
+toolbar #downloads-button[open] #downloads-indicator-anchor,
+#identity-box:not([disabled]):active,
+#tracking-protection-icon-container[open] #tracking-protection-icon,
+.findbar-textbox~toolbarbutton:not([disabled]):active,
+toolbarbutton.scrollbutton-up:active,
+toolbarbutton.scrollbutton-down:active,
+toolbarbutton#scrollbutton-up:active,
+toolbarbutton#scrollbutton-down:active{ 
+  filter: brightness(2) drop-shadow(0 0 2px red) drop-shadow(0 0 1px yellow)
+}*/
+
+/* Effect */
+/*
+.toolbarbutton-icon,
+.menuitem-iconic .menu-iconic-icon{
+  transition: transform 83ms linear !important;
+}
+
+toolbar .toolbarbutton-1 > .toolbarbutton-icon,
+.urlbar-icon{
+  transition: padding 83ms linear !important;
+}
+
+toolbarbutton#scrollbutton-up:active > .toolbarbutton-icon,
+toolbarbutton:not(.toolbarbutton-1):active > .toolbarbutton-icon,
+toolbar .toolbarbutton-1:not([disabled]):active > .toolbarbutton-badge-stack > .toolbarbutton-icon,
+.menuitem-iconic:active .menu-iconic-icon{
+  transform: scale(0.6) !important;
+}
+toolbarbutton#scrollbutton-down:active > .toolbarbutton-icon{ transform: scale(-0.6) !important; }
+
+
+toolbar .toolbarbutton-1:not([disabled]):active > .toolbarbutton-icon{
+  padding: calc(var(--toolbarbutton-inner-padding) + 3px) !important;
+}
+
+#page-action-buttons .urlbar-icon:active{ padding: calc(var(--urlbar-icon-padding) + 3px) !important; }
+*/
+/* bookmark popup toolbar background */
+#navigator-toolbox > toolbar:not(#TabsToolbar):not(#toolbar-menubar) menupopup[placespopup] {
+  -moz-appearance: auto !important;
+  background-color: #1d1d38  !important;
+  border: none !important; /* optional */
+}
+
+/* links */
+#navigator-toolbox > toolbar:not(#TabsToolbar):not(#toolbar-menubar) :-moz-any(menuitem.bookmark-item, menu.bookmark-item) {
+  color: #b3b3b3 !important;
+}   

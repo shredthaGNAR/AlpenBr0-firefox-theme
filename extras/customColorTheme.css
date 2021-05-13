@@ -1,0 +1,228 @@
+/* Light Mode */
+:root[lwthemetextcolor="dark"]{
+	/* accentcolor */
+	--lwt-accent-color: #4d4dfe40 !important;
+	--lwt-accent-color:  !important;
+	
+	/* textcolor */
+	--lwt-text-color: #b3b3b3 !important;
+	
+	/* toolbar */
+	--toolbar-bgcolor: transparent !important;
+	
+	/* toolbar_text */
+	--toolbar-color: #000 !important;
+	
+	/* toolbar_bottom_separator */
+	--toolbox-border-bottom-color: #d2d2d2 !important; /* legacy */
+	--chrome-content-separator-color: #d2d2d2 !important;
+	
+	/* icons */
+	--lwt-toolbarbutton-icon-fill: #000 !important;
+	
+	/* icons_attention */
+	--lwt-toolbarbutton-icon-fill-attention: hsla(180, 100%, 32%, 1) !important;
+	
+	/* button_background_hover */
+	--lwt-toolbarbutton-hover-background: #0000001a !important;
+	
+	/* button_background_active */
+	--lwt-toolbarbutton-active-background: #0000002a !important;
+	
+	--lwt-toolbar-field-color: #000 !important;
+	--lwt-toolbar-field-focus-color: #000 !important;
+	
+	/* popup_highlight */
+	--autocomplete-popup-highlight-background: #0001 !important;
+	
+	/* popup_highlight_text */
+	--autocomplete-popup-highlight-color: #000 !important;
+
+	--urlbar-popup-url-color: #0172C9 !important;
+	--lwt-toolbar-field-background-color: #fff !important;
+    --lwt-toolbar-field-focus: #fff !important;
+	--lwt-toolbar-field-border-color: #ccc !important;
+
+	--tab-line-col: #0078d4 !important;
+	--toolbar-field-focus-border-color: #0078d4a0 !important;
+	--private-browsing-indicator: #0078d4 !important;
+}
+/* Dark Mode */
+:root[lwthemetextcolor="bright"]
+{
+	/* accentcolor */
+	--lwt-accent-color: #4d4dfe40 !important;
+	
+	/* textcolor */
+	--lwt-text-color: #fff !important;
+	
+	/* toolbar */
+	--toolbar-bgcolor: transparent !important;
+	
+	/* toolbar_text */
+	--toolbar-color: #e8e0ff !important;
+	
+	/* toolbar_bottom_separator */
+	--toolbox-border-bottom-color: #5B5B5B !important; /* legacy */
+	--chrome-content-separator-color: #5B5B5B !important;
+	
+	/* icons */
+	--lwt-toolbarbutton-icon-fill: #c68aff !important;
+	
+	/* icons_attention */
+	--lwt-toolbarbutton-icon-fill-attention:hsla(180, 100%, 32%, 1) !important;
+	
+	/* button_background_hover */
+	--lwt-toolbarbutton-hover-background: #26048a27 !important;
+	
+	/* button_background_active */
+	--lwt-toolbarbutton-active-background: #e8e0ff13 !important;
+	
+	--lwt-toolbar-field-color: #e8e0ff !important;
+	--lwt-toolbar-field-focus-color: #e8e0ff !important;
+	
+	/* popup */
+	--arrowpanel-background: #281d4eff !important;
+	
+	/* popup_text */
+	--arrowpanel-color: #e8e0ff !important;
+	--autocomplete-popup-color: #e8e0ff !important;
+	--panel-disabled-color: hsla(0, 0%, 100%, .5) !important;
+	
+	/* popup_border */
+	--arrowpanel-border-color: #4d4dfe40 !important;                 /*"popup_border": "#304f60"*/
+	--autocomplete-popup-border-color: #636363 !important;
+	
+	/* popup_highlight */
+	--autocomplete-popup-highlight-background:hsla(240, 26%, 11%, .08) !important;
+	
+	/* popup_highlight_text */
+	--autocomplete-popup-highlight-color: #e8e0ff !important;
+
+	--urlbar-popup-url-color: #75B6E8 !important;
+	--lwt-toolbar-field-background-color: #2b2b2b !important;
+    --lwt-toolbar-field-focus: #2b2b2b !important;
+	--lwt-toolbar-field-border-color: #656565 !important;
+
+	--tab-line-col: #4C98D1 !important;
+	--toolbar-field-focus-border-color: #4c97d1a0 !important;
+	--private-browsing-indicator: #006cbe !important;
+}
+
+/* Inactive Window Light Mode */
+:-moz-any(:root[lwthemetextcolor="dark"]):-moz-window-inactive :-moz-any(#TabsToolbar, #navigator-toolbox) {
+	--lwt-accent-color: #e8e8e8 !important;
+	--lwt-text-color: #3a3a3a !important;
+	--toolbar-color: #3a3a3a !important;
+}
+
+/* Inactive Window Dark Mode */
+:-moz-any(:root[lwthemetextcolor="bright"]):-moz-window-inactive :-moz-any(#TabsToolbar, #navigator-toolbox) {
+	--lwt-accent-color: #2e2e2e !important;
+	--lwt-text-color: #b7b7b7 !important;
+	--toolbar-color: #cecece !important;
+}
+
+/* Sidebar Light Mode */
+:-moz-any(#sidebar-box, #sidebar),
+:-moz-any(.sidebar-panel, body)
+{
+	/* sidebar */
+	--sidebar-background-color: transparent !important;
+	--lwt-sidebar-background-color: var(--sidebar-background-color) !important;
+	
+	/* sidebar_text */
+	--sidebar-text-color: #000 !important;
+	--lwt-sidebar-text-color: var(--sidebar-text-color) !important;
+}
+
+/* Sidebar Dark Mode 
+:-moz-any(#sidebar-box, #sidebar)[style*="--sidebar-background-color:rgb(56, 56, 61);"], :-moz-any(.sidebar-panel, body)[style*="--lwt-sidebar-background-color:rgb(56, 56, 61);"], thanks 
+:-moz-any(.sidebar-panel)
+
+/*sidebar
+{ 
+	--sidebar-background-color: transparent !important;
+	--lwt-sidebar-background-color: var(--sidebar-background-color) !important;
+}
+	/* sidebar_text 
+	--sidebar-text-color: #fff !important;
+	--lwt-sidebar-text-color: var(--sidebar-text-color) !important;*/
+
+
+/* Urlbar Button Backgrounds Light Mode 
+:-moz-any(#urlbar, #searchbar)
+{
+	--toolbarbutton-hover-background: #0001 !important;
+	--toolbarbutton-active-background: #0002 !important;
+}
+
+/* Urlbar Button Backgrounds Dark Mode 
+:root:-moz-lwtheme-brighttext :-moz-any(#urlbar, #searchbar)
+{
+	--toolbarbutton-hover-background: #fff1 !important;
+	--toolbarbutton-active-background: #fff2 !important;
+}*/
+#navigator-toolbox{--tabs-border-color: #4d4dfe70 !important; }              /*"toolbar_top_separator": "#17161c"*/
+#tabbrowser-tabs {--tab-line-color: #4d4dfeff  !important;}                   /*"tab_line": "#126e82"*/
+.browser-toolbar:not(.titlebar-color) {color: #d3d3d3 !important;}        /*"bookmark_text": "#b3d9ff"*/
+
+/* "Customize search bar" */
+.browserContainer > findbar:-moz-lwtheme {color: #d3d3d3 !important;}     
+.findbar-find-status[status="notfound"] {color: #00dbfd !important;}
+#customization-container {color: #d3d3d3 !important;}                     /* "Color of text and" customize toolbar "icons */
+
+/*"popup_highlight"*/
+.urlbarView-row:not([type="tip"], [type="dynamic"])[selected] > .urlbarView-row-inner, .urlbarView-row-inner[selected] {
+    background-color: #3e3b9d !important;color: #ffffff !important}
+	/* "Menu with fewer spaces" 
+menupopup > menuitem, menupopup > menu{ padding-block: 1em !important;} 
+/* "Close button" */
+.tab-close-button{margin-inline-start: -2px !important;width: 16px !important;height: 16px !important;padding: 3px !important; margin-inline-end:-6px !important; }
+.tabbrowser-tab > .tab-stack > .tab-content >.tab-close-button{border-radius: 6px !important;}
+
+:root{
+	--lwt-accent-color: #4d4dfe40 !important;                 /*"frame": "#17161c" */
+	--lwt-text-color: #b3b3b3 !important;                          /*"tab_background_text": "#c3c3c3"*/
+	--arrowpanel-background: #1d1d38fA !important;                 /*"popup": "#1c1b22Fa"*/
+	--arrowpanel-color: #ffffff !important;                        /*"popup_text": "#dfdfdf"*/
+	--arrowpanel-border-color: #4d4dfe40 !important;                /*"popup_border": "#304f60"*/
+	--lwt-popup-brighttext-url-color: #4da6ff !important;          /*"color de label: El sitio no funciona?"*/
+	--panel-disabled-color: #99999990 !important;                  /*"label de popup label-deshabilitado"*/
+	--panel-description-color: #3399ff !important;                 /*"Color de letras de: correo de cuenta y dispositivos conectados"*/
+	--lwt-toolbar-field-background-color: #2f2a3c00 !important;      /*"toolbar_field":"#1a1b25"*/
+	--lwt-toolbar-field-color: #e5e5e6 !important;                 /*"toolbar_field_text":"#e2e9e9"*/
+	--lwt-toolbar-field-border-color: #4d4dfe40 !important;          /*"toolbar_field_border": "#363540"*/
+	--lwt-toolbar-field-focus: #242343fc !important;               /*"toolbar_field_focus": "#1a1b25FB"*/
+	--lwt-toolbar-field-focus-color: #ffffff !important;           /*"toolbar_field_text_focus": "#e5e5e6"*/
+	--toolbar-field-focus-border-color: #4d4dfe !important;        /*"toolbar_field_border_focus": "#005F66"*/
+	--lwt-toolbar-field-highlight: #3b539b !important;             /*"toolbar_field_highlight": "#006f80"*/
+	--lwt-toolbar-field-highlight-text: #eaeaea !important;        /*"toolbar_field_highlight_text": "#eaeaea"*/
+	--lwt-tab-text: #ffffff !important;                            /*"tab_text": "#ffffff"*/
+	--lwt-selected-tab-background-color: #11092300 !important;       /*"tab_selected":"#363540"*/
+	--lwt-background-tab-separator-color: #0a090c !important;      /*"tab_background_separator": "#54575f"*/
+	--toolbar-bgcolor: #1e2035bC !important;                         /*"toolbar":"#131118", "Color de la toolbar"*/
+	--toolbar-color: #1e2035bC !important;                           /*"toolbar":"#1a1b25"*/
+	--toolbarseparator-color: #392b45 !important;                  /*"toolbar_vertical_separator": "#363540"*/
+	--chrome-content-separator-color: #18151e !important;          /*"toolbar_bottom_separator": "#181818"*/
+	--lwt-toolbarbutton-icon-fill: #d8d8d9 !important;             /*"icons" : "#00dbfd"*/
+	--toolbarbutton-icon-fill: #d8d8d9 !important;                 /*"icons": "#00dbfd"*/
+	--lwt-toolbarbutton-icon-fill-attention: #4d7afe !important; /*"icons_attention": "#00dbfd"*/
+	--toolbarbutton-hover-background: #5524dbaa !important;          /*"button_background_hover": "#26242e"*/
+	--toolbarbutton-active-background: #5524db80 !important;         /*"button_background_active": "#131217"*/
+	--autocomplete-popup-highlight-background: #3e3b9d !important; /*"popup_highlight": "#006f80"*/
+  
+	--panel-separator-zap-gradient: linear-gradient(to right,#9059FF7a, #FF4AA2,#FFBD4Fdd, #aa00ff7a) !important;
+	--toolbarbutton-inner-padding: 5px !important;
+	--proton-tab-block-margin: 2px 4px !important;
+	--tab-min-height:  27px !important;
+	--tabs-shadow-size: 1px !important;
+	--tab-border-radius: 6px !important;
+	--arrowpanel-menuitem-padding: 6px !important;
+	--panel-font-size: 1em !important;
+	--button-bgcolor: color-mix(in srgb, #3399ff 15%, transparent) !important;
+  --button-hover-bgcolor: color-mix(in srgb, #3399ff 50%, transparent) !important;
+  --button-active-bgcolor: color-mix(in srgb, #3399ff 60%, transparent) !important;
+	--urlbar-icon-padding: 4px !important;
+	--panel-separator-color: #3d3762 !important;
+  }
