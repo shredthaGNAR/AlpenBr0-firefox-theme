@@ -6,4 +6,4 @@ my firefox css themes testing zone.
 <img src="https://github.com/WynStaXxx/br0tat0-Pr0ject/blob/master/screenshots/screen3.png" alt="3"/>
 <img src="https://github.com/WynStaXxx/br0tat0-Pr0ject/blob/master/screenshots/screen4.png" alt="4"/>
 
-# updated menus and bunch other stuff still working on due to changes to proton still not finalized. use on mac. bunch on vibrancy and i like foxyglow and working on updating the look of alphenglow to my liking.
+# all new colors and updates for firefox css themes, you can customize how you want. still getting GitHub setup with VScide so versioning and different styles I have can be shown etc. Can use alpenglow theme or a dark blue aplenglow them or default for transparent.
